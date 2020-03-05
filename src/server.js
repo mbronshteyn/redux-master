@@ -43,7 +43,14 @@ app.post('/api/todos', (req, res) => {
     if (err) {
       res.send.err(err);
     } else {
-      res.json(record);
+      Todo.find({}, (err, record) => {
+        console.log(record);
+        if (err) {
+          res.send(err)
+        } else {
+          res.json(record);
+        }
+      })
     }
   })
 });
