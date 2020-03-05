@@ -1,5 +1,3 @@
-import {randomInt} from '../util/Util'
-
 const initialState = {
   data: [],
 };
@@ -10,11 +8,15 @@ const todos = (state = initialState, action) => {
     case 'ADD_TODO' :
       return {
         ...state,
-        data: [...state.data, {id: randomInt(), text: action.payload} ]
+        data: [...state.data, {id: action.id, text: action.payload}]
       };
 
     case 'DELETE_TODO' :
-      return {};
+      const todos = state.data.filter(todo => todo.id !== action.id);
+      return {
+        ...state,
+        data: todos,
+      };
 
     default:
       return state;
