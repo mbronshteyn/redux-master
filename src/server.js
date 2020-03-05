@@ -1,9 +1,13 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const cors = require('cors');
+
 const Todo = require('./models/todo');
 
 const app = express();
+
+app.use(cors()); // Use this after the variable declaration
 
 mongoose.connect('mongodb://localhost:27020/todo-app-redux',
   {
