@@ -1,4 +1,4 @@
-<h1>This is a simple react redux with thunk sandbox project</h1>
+<h1>This is a simple react redux sandbox project</h1>
 
 It is React project with Redux using Express.js service as proxy to store data in MongoDB.
 
