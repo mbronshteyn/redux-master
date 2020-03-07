@@ -9,5 +9,7 @@ In order to start it:
 
 Start Robo 3T ( website: www.robomongo.org ) and connect to Mongo on localhost port 27020
 
+After that you can add `todo`, delete.  You can see the changes are made in Redux State and MongoDB.
+
 
 
