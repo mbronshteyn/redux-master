@@ -9,6 +9,7 @@ import {getTodos} from './actions'
 class App extends Component {
 
   componentDidMount() {
+    console.log( 'inside component did mount');
     this.props.dispatch(getTodos());
   }
 

@@ -12,7 +12,7 @@ const todos = (state = initialState, action) => {
       };
 
     case 'DELETE_TODO' :
-      const todos = state.data.filter(todo => todo.id !== action.id);
+      const todos = state.data.filter(todo => todo._id !== action.id._id);
       return {
         ...state,
         data: todos,

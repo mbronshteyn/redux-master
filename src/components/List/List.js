@@ -1,12 +1,13 @@
 import React from 'react';
 import {connect} from "react-redux";
 import {randomInt} from "../../util/Util";
-import {deleteTodo} from '../../actions'
+import { deleteTodoDB } from '../../actions'
 
 const List = (props) => {
 
   const deleteTodoDispatch = (id) => {
-    props.dispatch(deleteTodo(id));
+    console.log( 'deleteTodoDispatch', id );
+    props.dispatch(deleteTodoDB(id));
   };
 
   return (
@@ -17,7 +18,7 @@ const List = (props) => {
           return (<div key={randomInt()}>
             <li key={randomInt()}><span>{todo.text}</span>
               <button
-                onClick={() => deleteTodoDispatch(todo.id)}>Delete
+                onClick={() => deleteTodoDispatch(todo._id)}>Delete
               </button>
             </li>
           </div>)
